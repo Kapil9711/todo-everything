@@ -42,7 +42,7 @@ const Navbar = () => {
             Explore
           </Link>
           <Link
-            className="mr-10 ml-10 link text-orange-600 hover:text-orange-400   "
+            className="text-xl ml-10 link text-orange-600 hover:text-orange-400   "
             href={"/tasks"}
           >
             Dashboard
