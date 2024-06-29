@@ -28,7 +28,9 @@ const Images = ({ height }) => {
   return (
     <section className=" h-full sm:ml-40  sm:w-5/12 ">
       <section
-        className={`pattern absolute ${height < 700 ? "top-24" : "top-44"}`}
+        className={`pattern absolute ${
+          height < 700 ? "top-24" : "top-44"
+        } -mt-8 sm:mt-0`}
       >
         <Image
           className="img1 -z-10 "

@@ -32,16 +32,14 @@ const Content = () => {
     });
   });
   return (
-    <section className="z-30  content border-2 border-orange-500 px-2 py-4 absolute right-0 bottom-1 sm:bottom-12 sm:w-5/12 ">
-      <p className="sm:leading-7 text-sm  sm:text-lg">
+    <section className="z-30   content border-2 border-orange-500 px-2 py-4 absolute right-0 sm:right-32 bottom-1 sm:bottom-12 sm:w-96 ">
+      <p className=" sm:leading-7 text-sm  sm:text-lg">
         Welcome to Listify, your ultimate companion for staying organized and
-        productive! We understand that managing tasks, projects, and daily
-        activities can be overwhelming, which is why we created this platform to
-        help you streamline your life and achieve your goals with ease.
+        productive!
       </p>
       <button>
         <Link
-          className="inline-block mt-4 text-2xl hover:bg-orange-600   bg-orange-500  py-4 px-10  text-white"
+          className="inline-block mx-auto mt-4 text-2xl hover:bg-orange-600   bg-orange-500  py-4 px-10  text-white"
           href={"/tasks"}
         >
           Get Started
