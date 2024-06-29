@@ -37,7 +37,7 @@ const Images = ({ height }) => {
         ></Image>
       </section>
 
-      <section className="z-10 h-full sm:h-auto absolute -top-10 -left-10 sm:top-10   sm:h-5/6 sm:left-0  runner ">
+      <section className="z-10 h-full  absolute -top-4 -left-10 sm:top-10   sm:h-5/6 sm:left-0  runner ">
         <Image
           className="bg-cover object-cover h-full"
           src={Runner}
