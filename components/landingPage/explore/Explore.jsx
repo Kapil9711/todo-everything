@@ -1,9 +1,11 @@
 import About from "./About";
+import Details from "./Details";
 
 const Explore = () => {
   return (
     <main id="explore" className="py-16 min-h-screen">
       <About />
+      <Details />
     </main>
   );
 };
