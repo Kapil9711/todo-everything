@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html style={{ scrollBehavior: "smooth" }} lang="en">
         <body>
           {/* <Navbar /> */}
           {children}

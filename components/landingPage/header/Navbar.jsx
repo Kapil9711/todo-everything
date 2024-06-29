@@ -37,7 +37,14 @@ const Navbar = () => {
           <Link
             scroll
             className="hidden sm:inline-block  link text-orange-600 hover:text-orange-400   ml-10"
-            href={"#explore"}
+            href={"#about"}
+          >
+            About
+          </Link>
+          <Link
+            scroll
+            className="hidden sm:inline-block  link text-orange-600 hover:text-orange-400   ml-10"
+            href={"#details"}
           >
             Explore
           </Link>
