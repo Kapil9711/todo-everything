@@ -28,9 +28,7 @@ const Images = ({ height }) => {
   return (
     <section className=" h-full sm:ml-40  sm:w-5/12 ">
       <section
-        className={`pattern absolute ${
-          height < 700 ? "top-24" : "top-44"
-        } -mt-8 sm:mt-0`}
+        className={`pattern absolute ${height < 700 ? "top-32" : "top-44"} `}
       >
         <Image
           className="img1 -z-10 "
@@ -39,8 +37,12 @@ const Images = ({ height }) => {
         ></Image>
       </section>
 
-      <section className=" hidden sm:block z-10 absolute top-10   sm:h-5/6 sm:left-0  runner ">
-        <Image src={Runner} alt="runner"></Image>
+      <section className="z-10 h-full sm:h-auto absolute -top-10 -left-10 sm:top-10   sm:h-5/6 sm:left-0  runner ">
+        <Image
+          className="bg-cover object-cover h-full"
+          src={Runner}
+          alt="runner"
+        ></Image>
       </section>
     </section>
   );
