@@ -2,7 +2,7 @@ import React from "react";
 
 const Details = () => {
   return (
-    <section className="details container min-h-screen py-10">
+    <section className="details container min-h-screen py-10 mx-auto">
       <h2>Explore Our Features</h2>
       <ul>
         <li>
