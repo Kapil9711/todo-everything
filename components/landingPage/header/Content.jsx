@@ -32,7 +32,7 @@ const Content = () => {
     });
   });
   return (
-    <section className="z-30  justify-center  content border-2 border-orange-500 px-2 py-4 absolute right-0 sm:right-24 bottom-1 sm:bottom-12 sm:w-96 ">
+    <section className="z-30  justify-center  content border-2 border-orange-500 px-2 py-4 absolute right-0 sm:right-40 bottom-1 sm:bottom-12 sm:w-96 ">
       <p className="sm:leading-7 text-sm  sm:text-lg">
         Welcome to Listify, your ultimate companion for staying organized and
         productive!

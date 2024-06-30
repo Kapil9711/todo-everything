@@ -20,8 +20,8 @@ const Navbar = () => {
   });
 
   return (
-    <nav className=" z-30  absolute top-0 container ">
-      <ul className="ul links py-5  flex text-2xl   justify-between">
+    <nav className=" z-30  absolute top-0 left-0 w-full   ">
+      <ul className="ul links py-5  flex text-2xl    justify-between ">
         <div>
           <Link href="/">
             <Image className="link w-40 h-12" src={logo} alt="logo img"></Image>

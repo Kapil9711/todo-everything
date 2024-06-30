@@ -44,7 +44,7 @@ const Boxes = ({ height }) => {
         }  left-48 rotate-45 w-16 h-16 border-2 border-orange-500`}
       ></div>
       <div className="hidden sm:block rotate-45 box2 absolute bottom-28 left-16 h-28 w-28 bg-orange-500 border-2 border-orange-400"></div>
-      <div className="hidden sm:block rotate-45 box3 h-20 w-20 absolute bottom-96 right-24 border-2 border-orange-500"></div>
+      <div className="hidden sm:block rotate-45 box3 h-20 w-20 absolute bottom-96 right-40 border-2 border-orange-500"></div>
     </>
   );
 };
