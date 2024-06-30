@@ -1,11 +1,14 @@
-import React from "react";
-import Dashboard from "@/components/dashboard/Dashboard";
+import Tasks from "@/components/dashboard/tasks/Tasks";
+import { getAllTasks } from "@/utils/actions";
 
-const TaskPage = () => {
+const TaskPage = async () => {
+  const tasks = await getAllTasks();
   return (
-    <>
-      <Dashboard />
-    </>
+    <section className="flex-1 border border-orange-500 min-h-screen flex flex-col justify-center items-center">
+      <h1 className="text-5xl text-center">All Tasks </h1>
+
+      <Tasks tasks={tasks} />
+    </section>
   );
 };
 
