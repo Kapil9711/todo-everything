@@ -18,7 +18,7 @@ const Landingpage = () => {
     <div className="min-h-screen px-4 overflow-hidden sm:px-0 w-full bg-black  text-white">
       {height !== 0 && (
         <>
-          <header className="container font-sans relative h-screen mx-auto pt-20 ">
+          <header className=" sm:container font-sans relative h-screen mx-auto pt-20 ">
             <Navbar />
             <Images height={height} />
             <Texts height={height} />

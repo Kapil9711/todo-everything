@@ -40,7 +40,7 @@ const Boxes = ({ height }) => {
     <>
       <div
         className={`hidden sm:block box1 absolute ${
-          height < 700 ? "top-16" : "top-32"
+          height < 700 ? "top-24" : "top-32"
         }  left-48 rotate-45 w-16 h-16 border-2 border-orange-500`}
       ></div>
       <div className="hidden sm:block rotate-45 box2 absolute bottom-28 left-16 h-28 w-28 bg-orange-500 border-2 border-orange-400"></div>
