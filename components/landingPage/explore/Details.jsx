@@ -97,21 +97,21 @@ const Details = () => {
         Features
       </h2>
 
-      <div className="a sm:hover:scale-105 transition-transform duration-200 ease-linear absolute top-52 left-1/2 -translate-x-1/2 w-64 h-64 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
+      <div className="a mt-10 mx-auto sm:hover:scale-105 transition-transform duration-200 ease-linear sm:absolute top-52 left-1/2 sm:-translate-x-1/2 w-64 h-64 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
         <p className="text-lg p-8 text-gray-200">
           Quickly add tasks with due dates, priorities, and notes. Effortlessly
           edit or delete tasks as needed.
         </p>
       </div>
 
-      <div className="d sm:hover:scale-105 transition-transform duration-200 ease-linear  w-64 h-64 absolute  mt-40 top-96 right-80 flex justify-center items-center border   border-t-8 border-r-4 border-l-4 rounded-full border-orange-500">
+      <div className="d mt-10 mx-auto sm:hover:scale-105 transition-transform duration-200 ease-linear  w-64 h-64 sm:absolute  sm:mt-40 top-96 sm:right-80 flex justify-center items-center border   border-t-8 border-r-4 border-l-4 rounded-full border-orange-500">
         <p className="text-lg p-8 text-gray-200">
           Break down larger tasks into manageable subtasks to ensure every
           detail is covered
         </p>
       </div>
 
-      <div className="e sm:hover:scale-105 transition-transform duration-200 ease-linear  w-64 h-64 absolute mt-40 top-96 left-80 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
+      <div className="e mx-auto mt-10 sm:hover:scale-105 transition-transform duration-200 ease-linear  w-64 h-64 sm:absolute sm:mt-40 top-96 left-80 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
         <p className="text-lg p-8 text-gray-200">
           Organize your tasks with categories and tags for easy filtering and
           searching.
@@ -126,21 +126,21 @@ const Details = () => {
       </div> */}
       <div
         style={{ borderRadius: "50%" }}
-        className=" b sm:hover:scale-105 transition-transform duration-200 ease-linear flex justify-center items-center absolute rotate-45  ml-36 right-96 mr-10 mt-12 line1 top-96 w-60 h-28 border-t-2 border-b-2 border-orange-500"
+        className="hidden  b sm:hover:scale-105 transition-transform duration-200 ease-linear sm:flex justify-center items-center sm:absolute rotate-45  ml-36 right-96 mr-10 mt-12 line1 top-96 w-60 h-28 border-t-2 border-b-2 border-orange-500"
       >
         <strong className="text-sm text-gray-200">Subtasks</strong>
       </div>
 
       <div
         style={{ borderRadius: "50%" }}
-        className="c sm:hover:scale-105 transition-transform duration-200 ease-linear flex justify-center items-center absolute -rotate-45  left-96 ml-10  mt-12 line1 top-96 w-60 h-28 border-t-2 border-b-2 border-orange-500"
+        className="hidden c sm:hover:scale-105 transition-transform duration-200 ease-linear sm:flex justify-center items-center sm:absolute -rotate-45  left-96 ml-10  mt-12 line1 top-96 w-60 h-28 border-t-2 border-b-2 border-orange-500"
       >
         <strong className="text-sm text-gray-200">Customization</strong>
       </div>
 
       <div
         style={{ borderRadius: "100%" }}
-        className="f sm:hover:scale-105 transition-transform duration-200 ease-linear  absolute  flex justify-center items-center  left-96 ml-20  mt-12 line1 bottom-0 w-1/3 h-60 border-t-4 border-b-4 border-orange-500"
+        className="hidden sm:hover:scale-105 transition-transform duration-200 ease-linear  sm:absolute  sm:flex justify-center items-center  left-96 ml-20  mt-12 line1 bottom-0 w-1/3 h-60 border-t-4 border-b-4 border-orange-500"
       >
         <p className=" text-lg pl-20 pr-16 text-gray-200">
           Organize your tasks with categories and tags for easy filtering and
