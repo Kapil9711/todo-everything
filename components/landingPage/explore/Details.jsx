@@ -1,13 +1,68 @@
-import React from "react";
-
 const Details = () => {
   return (
-    <section
-      id="details"
-      className="details sm:container min-h-screen py-10 mx-auto"
-    >
-      <h2>Explore Our Features</h2>
-      <ul>
+    <section className="relative details sm:container min-h-screen py-28 mx-auto">
+      <h2
+        id="details"
+        className="text-4xl sm:text-5xl text-orange-500 text-center"
+      >
+        Features
+      </h2>
+
+      <div className="sm:hover:scale-105 transition-transform duration-200 ease-linear absolute top-52 left-1/2 -translate-x-1/2 w-64 h-64 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
+        <p className="text-lg p-8 text-gray-200">
+          Quickly add tasks with due dates, priorities, and notes. Effortlessly
+          edit or delete tasks as needed.
+        </p>
+      </div>
+
+      <div className="sm:hover:scale-105 transition-transform duration-200 ease-linear  w-64 h-64 absolute  mt-40 top-96 right-80 flex justify-center items-center border   border-t-8 border-r-4 border-l-4 rounded-full border-orange-500">
+        <p className="text-lg p-8 text-gray-200">
+          Break down larger tasks into manageable subtasks to ensure every
+          detail is covered
+        </p>
+      </div>
+
+      <div className="sm:hover:scale-105 transition-transform duration-200 ease-linear  w-64 h-64 absolute mt-40 top-96 left-80 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
+        <p className="text-lg p-8 text-gray-200">
+          Organize your tasks with categories and tags for easy filtering and
+          searching.
+        </p>
+      </div>
+
+      {/* <div className="w-64 h-64 absolute mt-40 top-96 left-32 flex justify-center items-center border  border-l-8 border-t-4 border-b-4 rounded-full border-white">
+        <p className="text-lg p-8">
+          Personalize your dashboard with a variety of themes and layouts to
+          suit your style.
+        </p>
+      </div> */}
+      <div
+        style={{ borderRadius: "50%" }}
+        className="sm:hover:scale-105 transition-transform duration-200 ease-linear flex justify-center items-center absolute rotate-45  ml-36 right-96 mr-10 mt-12 line1 top-96 w-60 h-28 border-t-2 border-b-2 border-orange-500"
+      >
+        <strong className="text-sm text-gray-200">Subtasks</strong>
+      </div>
+
+      <div
+        style={{ borderRadius: "50%" }}
+        className="sm:hover:scale-105 transition-transform duration-200 ease-linear flex justify-center items-center absolute -rotate-45  left-96 ml-10  mt-12 line1 top-96 w-60 h-28 border-t-2 border-b-2 border-orange-500"
+      >
+        <strong className="text-sm text-gray-200">Customization</strong>
+      </div>
+
+      <div
+        style={{ borderRadius: "100%" }}
+        className="sm:hover:scale-105 transition-transform duration-200 ease-linear  absolute  flex justify-center items-center  left-96 ml-20  mt-12 line1 bottom-0 w-1/3 h-60 border-t-4 border-b-4 border-orange-500"
+      >
+        <p className=" text-lg pl-20 pr-16 text-gray-200">
+          Organize your tasks with categories and tags for easy filtering and
+          searching.
+        </p>
+      </div>
+
+      <div className="min-h-screen"></div>
+      {/* <div className="min-h-screen"></div> */}
+
+      {/* <ul>
         <li>
           <strong>Task Management:</strong>
           <ul>
@@ -99,7 +154,7 @@ const Details = () => {
             </li>
           </ul>
         </li>
-      </ul>
+      </ul> */}
     </section>
   );
 };
