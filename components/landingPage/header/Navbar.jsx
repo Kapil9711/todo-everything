@@ -35,18 +35,18 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            scroll
+            scroll={true}
             className="hidden sm:inline-block  link text-orange-600 hover:text-orange-400   ml-10"
             href={"#about"}
           >
             About
           </Link>
           <Link
-            scroll
+            scroll={true}
             className="hidden sm:inline-block  link text-orange-600 hover:text-orange-400   ml-10"
             href={"#details"}
           >
-            Explore
+            Features
           </Link>
           <Link
             className="text-xl ml-10 link text-orange-600 hover:text-orange-400   "

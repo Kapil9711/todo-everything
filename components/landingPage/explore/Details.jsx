@@ -86,7 +86,10 @@ const Details = () => {
   });
 
   return (
-    <section className="relative details sm:container min-h-screen py-28 mx-auto">
+    <section
+      style={{ paddingBottom: "830px", maxHeight: "970px" }}
+      className=" relative details sm:container min-h-screen   pt-20 mx-auto"
+    >
       <h2
         id="details"
         className="text-4xl sm:text-5xl text-orange-500 text-center"
@@ -145,7 +148,7 @@ const Details = () => {
         </p>
       </div>
 
-      <div className="min-h-screen"></div>
+      {/* <div className="h-1/2"></div> */}
       {/* <div className="min-h-screen"></div> */}
 
       {/* <ul>
