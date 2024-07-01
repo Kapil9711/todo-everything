@@ -97,7 +97,7 @@ const Details = () => {
         Features
       </h2>
 
-      <div className="a mt-10 mx-auto sm:hover:scale-105 transition-transform duration-200 ease-linear sm:absolute top-52 left-1/2 sm:-translate-x-1/2 w-64 h-64 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
+      <div className="a mt-10 sm:mt-0 mx-auto sm:hover:scale-105 transition-transform duration-200 ease-linear sm:absolute top-52 left-1/2 sm:-translate-x-1/2 w-64 h-64 flex justify-center items-center border  border-l-4 border-t-8 border-r-4 rounded-full border-orange-500">
         <p className="text-lg p-8 text-gray-200">
           Quickly add tasks with due dates, priorities, and notes. Effortlessly
           edit or delete tasks as needed.
@@ -140,7 +140,7 @@ const Details = () => {
 
       <div
         style={{ borderRadius: "100%" }}
-        className="hidden sm:hover:scale-105 transition-transform duration-200 ease-linear  sm:absolute  sm:flex justify-center items-center  left-96 ml-20  mt-12 line1 bottom-0 w-1/3 h-60 border-t-4 border-b-4 border-orange-500"
+        className="f hidden sm:hover:scale-105 transition-transform duration-200 ease-linear  sm:absolute  sm:flex justify-center items-center  left-96 ml-20  mt-12 line1 bottom-0 w-1/3 h-60 border-t-4 border-b-4 border-orange-500"
       >
         <p className=" text-lg pl-20 pr-16 text-gray-200">
           Organize your tasks with categories and tags for easy filtering and
