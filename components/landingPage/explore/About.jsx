@@ -16,7 +16,8 @@ const About = () => {
         start: "-40% bottom",
         toggleActions: "restart none none none",
       },
-      duration: 1,
+      duration: 1.5,
+      delay: 0.2,
       x: 150,
       y: 100,
       opacity: 0,
@@ -25,10 +26,10 @@ const About = () => {
     gsap.from("#b", {
       scrollTrigger: {
         trigger: "#b",
-        start: "-40% 100%",
+        start: "-35% 100%",
         toggleActions: "restart none none none",
       },
-      duration: 1,
+      duration: 1.5,
       delay: 0.2,
       opacity: 0,
       ease: Expo.easeInOut,
@@ -41,7 +42,7 @@ const About = () => {
         start: "-50% 100%",
         toggleActions: "restart none none none",
       },
-      duration: 1,
+      duration: 1.5,
       delay: 0.3,
       opacity: 0,
       ease: Expo.easeInOut,
@@ -52,7 +53,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative sm:container gap-16 flex items-center flex-col  mx-auto min-h-screen about"
+      className="relative sm:container pb-40 gap-16 flex items-center flex-col  mx-auto min-h-screen about"
     >
       <h2 className="text-3xl sm:text-5xl text-center  text-orange-400">
         About Us

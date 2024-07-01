@@ -4,7 +4,7 @@ const Details = () => {
   return (
     <section
       id="details"
-      className="details container min-h-screen py-10 mx-auto"
+      className="details sm:container min-h-screen py-10 mx-auto"
     >
       <h2>Explore Our Features</h2>
       <ul>
