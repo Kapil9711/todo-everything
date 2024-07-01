@@ -87,7 +87,7 @@ const About = () => {
             projects, or collaborative efforts, we've got you covered
           </p>
         </div>
-        <div id="b" className="absolute top-56 -left-96 w-96 -ml-40">
+        <div id="b" className="sm:absolute top-56 -left-96 w-96 sm:-ml-40">
           <strong className="text-xl sm:text-2xl">Our Mission :</strong>
           <p className="  mx-auto  sm:pl-4  p-2 mt-4  border border-orange-500 leading-7 tracking-wide text-gray-400 hover:text-gray-300 sm:text-xl sm:max-w-2/3  sm:hover:scale-105 transition-all duration-500 ease-in-out">
             Our mission is to make task management effortless for everyone. We
