@@ -14,12 +14,15 @@ const createNewTask = async (prevState, formData) => {
     const content = formData.get("task");
     const targetTime = formData.get("time");
     const targetDate = formData.get("date").split("-").reverse().join("/");
+    const clerkId = formData.get("clerkId");
+
     task.parse({ content, targetDate, targetTime });
     await prisma.task.create({
       data: {
         content,
         targetTime,
         targetDate,
+        clerkId,
         createdTime: new Date().toLocaleTimeString("en-IN", {
           hour: "2-digit",
           minute: "2-digit",

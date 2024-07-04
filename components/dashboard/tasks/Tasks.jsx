@@ -17,32 +17,102 @@ const Tasks = ({ tasks }) => {
   const [state, getFormState] = useFormState(deleteTask, null);
   const btnRef = useRef(null);
   return (
-    <div className="mt-10">
+    <div className="px-10 inline-block border-2 border-black">
       {state && state.msg}
-      {tasks.map((task) => {
-        return (
-          <div className="flex flex-col gap-2 mt-8" key={task.id}>
-            <h1>{task.content}</h1>
-            <h2>created at {task.createdDate + " " + task.createdTime}</h2>
 
-            <h2>target time {task.targetDate + " " + task.targetTime}</h2>
-            <form action={updateTask}>
-              <input
-                type="text"
-                name="updateId"
-                defaultValue={task.id}
-                className="hidden"
-              />
-              <button className="w-fit" ref={btnRef}>
+      <section className=" dashboard pt-5">
+        <h2 className=" text-2xl">Dashboard</h2>
+        <p className="text-base-400 py-1">See your Performance</p>
+
+        <section className=" pt-4 cards grid grid-cols-3 gap-16">
+          <div className=" bg-pink-400  h-48 rounded-3xl "></div>
+          <div className=" bg-violet-500 h-48 rounded-3xl "></div>
+          <div className=" bg-orange-400 h-48 rounded-3xl "></div>
+        </section>
+      </section>
+
+      <section className="mt-8 show-task">
+        <div className="flex gap-8">
+          <input type="date" />
+          <p className="flex gap-4">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span>11</span>
+          </p>
+        </div>
+      </section>
+
+      {tasks.map((task) => {
+        const cDate = new Date().toLocaleDateString().split("/");
+        const tDate = task.targetDate.split("/");
+        const tTime = task.targetTime.split(":");
+        const cTime = new Date().toLocaleTimeString().split(":");
+        const d = tDate[0] - cDate[0];
+        const m = tDate[1] - cDate[1];
+        const y = tDate[2] - cDate[2];
+
+        let minutes = Number(cTime[0]) * 60 + Number(cTime[1]);
+        let tmin = Number(tTime[0]) * 60 + Number(tTime[1]);
+        let rminutes = tmin - minutes;
+
+        let h = Math.floor(rminutes / 60);
+        let min = rminutes % 60;
+        if (h < 0) h = "00";
+        else if (h < 10) h = "0" + h;
+        if (min < 0) min = "00";
+        else if (min < 10) min = "0" + min;
+
+        let t = h + ":" + min;
+
+        return (
+          <div
+            style={{ maxWidth: "500px" }}
+            className=" mx-auto border border-black justify-between items-center flex px-4 gap-8 mt-8 "
+            key={task.id}
+          >
+            <form
+              className=" flex flex-col  items-center gap-2"
+              action={updateTask}
+            >
+              <div className="flex gap-4">
                 <input
-                  onChange={() => btnRef.current.click()}
-                  name="completed"
-                  type="checkbox"
-                  defaultChecked={task.completed}
-                  className="w-8 h-8"
+                  type="text"
+                  name="updateId"
+                  defaultValue={task.id}
+                  className="hidden"
                 />
-              </button>
+                <button className="w-fit" ref={btnRef}>
+                  <input
+                    onChange={() => btnRef.current.click()}
+                    name="completed"
+                    type="checkbox"
+                    defaultChecked={task.completed}
+                    className="w-4 h-4"
+                  />
+                </button>
+                <h1 className="text-2xl">{task.content}</h1>
+              </div>
+              <h2 className="text-sm text-gray-600">
+                {task.createdDate + " " + task.createdTime}
+              </h2>
             </form>
+            <div>
+              <h2>{task.targetDate + " " + task.targetTime}</h2>
+              <h2>
+                <span className="border border-black p-1">{d}</span>
+                <span className="border border-black p-1">{m}</span>
+                <span className="border border-black p-1">{y}</span>
+                <span className="ml-4">{t}</span>
+              </h2>
+            </div>
 
             <form action={getFormState}>
               <input

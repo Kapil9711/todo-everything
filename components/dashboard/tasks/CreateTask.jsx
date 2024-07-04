@@ -12,12 +12,18 @@ const SubmitBtn = () => {
   );
 };
 
-const CreateTask = () => {
+const CreateTask = ({ clerkId }) => {
   const [state, getState] = useFormState(createNewTask, null);
   return (
     <div className="flex justify-center items-center min-h-screen">
       <form action={getState}>
         {state && state.msg}
+        <input
+          name="clerkId"
+          className="hidden"
+          type="text"
+          defaultValue={clerkId}
+        />
         <div className="join">
           <label className="join-item input input-bordered flex items-center gap-2">
             Task

@@ -9,12 +9,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Task {
   id          String   @id @default(uuid())
+  clerkId     String
   content     String
   createdTime String
   createdDate String
