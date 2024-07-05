@@ -14,10 +14,17 @@ const DeleteBtn = () => {
 };
 
 const Tasks = ({ tasks }) => {
+  let noOfCompleted = 0;
+  let noOfunCompleted = 0;
+  for (let task of tasks) {
+    if (task.completed) noOfCompleted++;
+    else noOfunCompleted++;
+  }
+
   const [state, getFormState] = useFormState(deleteTask, null);
   const btnRef = useRef(null);
   return (
-    <div className="px-10 inline-block border-2 border-black">
+    <div className="px-10  inline-block border-2 border-black">
       {state && state.msg}
 
       <section className=" dashboard pt-5">
@@ -25,9 +32,20 @@ const Tasks = ({ tasks }) => {
         <p className="text-base-400 py-1">See your Performance</p>
 
         <section className=" pt-4 cards grid grid-cols-3 gap-16">
-          <div className=" bg-pink-400  h-48 rounded-3xl "></div>
-          <div className=" bg-violet-500 h-48 rounded-3xl "></div>
-          <div className=" bg-orange-400 h-48 rounded-3xl "></div>
+          <div className="p-4 text-center text-4xl font-extrabold text-white bg-pink-400  h-48 rounded-3xl ">
+            All Tasks
+            <span className="mt-8 text-6xl block text-bold text-center">
+              {tasks.length}
+            </span>
+          </div>
+          <div className="p-4 text-white font-extrabold bg-violet-500 h-48 rounded-3xl ">
+            <p className="text-4xl text-center ">Completed </p>
+            <p className="text-6xl text-center pt-8">{noOfCompleted}</p>
+          </div>
+          <div className="p-4 text-white font-extrabold bg-violet-500 h-48 rounded-3xl ">
+            <p className="text-4xl text-center ">Remaining</p>
+            <p className="text-6xl text-center pt-8">{noOfunCompleted}</p>
+          </div>
         </section>
       </section>
 

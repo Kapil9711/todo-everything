@@ -44,8 +44,8 @@ const createNewTask = async (prevState, formData) => {
   }
 };
 
-const getAllTasks = async () => {
-  return prisma.task.findMany();
+const getAllTasks = async (clerkId) => {
+  return prisma.task.findMany({ where: { clerkId } });
 };
 
 const deleteTask = async (prevState, formData) => {
