@@ -15,7 +15,7 @@ const SubmitBtn = () => {
 const CreateTask = ({ clerkId }) => {
   const [state, getState] = useFormState(createNewTask, null);
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className=" flex justify-center items-center min-h-screen">
       <form action={getState}>
         {state && state.msg}
         <input

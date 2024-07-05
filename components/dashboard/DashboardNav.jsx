@@ -5,11 +5,11 @@ import React from "react";
 const DashboardNav = () => {
   return (
     <>
-      <div className="drawer">
+      <div className="drawer  ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
+        <div className="drawer-content fixed w-full z-10  flex flex-col">
           {/* Navbar */}
-          <div className="navbar  w-full">
+          <div className="navbar bg-base-200  w-full">
             {/* <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"

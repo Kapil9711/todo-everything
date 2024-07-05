@@ -24,7 +24,10 @@ const Tasks = ({ tasks }) => {
   const [state, getFormState] = useFormState(deleteTask, null);
   const btnRef = useRef(null);
   return (
-    <div className="px-10  inline-block border-2 border-black">
+    <div
+      style={{ scrollbarWidth: "none" }}
+      className="px-10 pt-20  bg-secondary-content inline-block border-2 border-black max-h-screen overflow-scroll"
+    >
       {state && state.msg}
 
       <section className=" dashboard pt-5">
