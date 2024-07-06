@@ -14,17 +14,17 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="drawer drawer-open hidden sm:block ">
+      <div className="drawer drawer-open hidden sm:block  ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-        <div className="drawer-side bg-base-200 p-0">
+        <div className="drawer-side border-r-2  border-base-600  bg-base-200 p-0">
           {/* <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label> */}
 
-          <ul className="menu pt-20 overflow-hidden    gap-4 text-base-content min-h-full  w-80 p-4 ">
+          <ul className="menu pt-20 overflow-hidden   gap-4 text-base-content min-h-full  w-80 p-4 ">
             <h1 className="p-4 mt-4 text-2xl">
               Hello , {firstName + " " + lastName}
             </h1>

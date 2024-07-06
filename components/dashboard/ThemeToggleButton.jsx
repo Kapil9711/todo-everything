@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { CiLight } from "react-icons/ci";
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "winter");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -11,7 +11,7 @@ function ThemeToggle() {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (prevTheme === "winter" ? "black" : "winter"));
   };
 
   return (

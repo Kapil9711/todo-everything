@@ -20,9 +20,11 @@ export default function RootLayout({ children }) {
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html style={{ scrollBehavior: "smooth" }} lang="en">
-        <body>
+        <body className="bg-base-200">
           {/* <Navbar /> */}
-          {children}
+          <div style={{ maxWidth: "1500px" }} className="mx-auto">
+            {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>

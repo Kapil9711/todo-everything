@@ -1,4 +1,4 @@
-import Calender from "@/components/dashboard/tasks/Calender";
+import MainCalender from "@/components/dashboard/tasks/Calender";
 import Tasks from "@/components/dashboard/tasks/Tasks";
 import { getAllTasks } from "@/utils/actions";
 import { auth } from "@clerk/nextjs/server";
@@ -9,7 +9,7 @@ const TaskPage = async () => {
   return (
     <>
       <Tasks tasks={tasks} />
-      <Calender />
+      <MainCalender />
     </>
   );
 };

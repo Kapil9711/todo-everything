@@ -5,9 +5,9 @@ import React from "react";
 const DashboardNav = () => {
   return (
     <>
-      <div className="drawer  ">
+      <div className="drawer ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content fixed w-full z-10  flex flex-col">
+        <div className="drawer-content absolute top-0  w-full z-10   flex flex-col">
           {/* Navbar */}
           <div className="navbar bg-base-200  w-full">
             {/* <div className="flex-none lg:hidden">
@@ -31,7 +31,7 @@ const DashboardNav = () => {
                 </svg>
               </label>
             </div> */}
-            <div className=" sm:ml-12 text-3xl sm:text-5xl text-orange-500 tracking-wider italic font-extrabold mx-2 flex-1 px-2">
+            <div className=" sm:ml-12 text-3xl sm:text-5xl text-orange-500 tracking-widest  italic font-extrabold mx-2 flex-1 px-2">
               Listify
             </div>
             <div className=" flex-none ">
