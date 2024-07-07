@@ -17,7 +17,7 @@ const MainCalender = () => {
   return (
     <div className="pt-24 px-4 border-l-2 border-base-500 bg-base-200 overflow-hidden hidden sm:block min-h-screen">
       <Link
-        className="text-white p-4 text-xl mb-10 bg-orange-500 hover:bg-orange-600"
+        className="text-white py-4 px-5 text-xl mb-10 bg-orange-500 hover:bg-orange-600"
         href={"/createTask"}
       >
         + Add New

@@ -16,7 +16,7 @@ function ThemeToggle() {
 
   return (
     <button
-      className={`btn  ${theme === "light" ? "bg-gray-400" : "bg-gray-600"} rounded-full`}
+      className={`btn  ${theme === "winter" ? "bg-slate-300 hover:bg-slate-400" : "bg-gray-500 hover:bg-slate-400"} rounded-full`}
       onClick={toggleTheme}
     >
       <CiLight />
