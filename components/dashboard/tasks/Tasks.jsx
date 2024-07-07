@@ -1,8 +1,10 @@
 "use client";
 
 import { deleteTask, updateTask } from "@/utils/actions";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useFormStatus, useFormState } from "react-dom";
+import gsap, { Expo } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const DeleteBtn = () => {
   const { pending } = useFormStatus();
@@ -49,6 +51,17 @@ const Tasks = ({ tasks }) => {
     (task) => parseInt(task.createdDate.split("/")[0]) === isActive
   );
 
+  useGSAP(() => {
+    gsap.from(".box", {
+      delay: 0.1,
+      duration: 0.2,
+      height: 0,
+      stagger: 0.1,
+      opacity: 0,
+      ease: Expo.ease,
+    });
+  }, [isActive]);
+
   return (
     <div
       style={{ scrollbarWidth: "none" }}
@@ -88,26 +101,27 @@ const Tasks = ({ tasks }) => {
         <div className="relative">
           <p
             style={{ scrollbarWidth: "none" }}
-            className="p-4 cursor-pointer  rounded-full flex mx-auto bg-orange-600  gap-8 justify-center  max-w-60 overflow-x-scroll"
+            className="p-4 cursor-pointer  rounded-full flex mx-auto bg-orange-600  gap-5 justify-center  max-w-60 overflow-x-scroll"
           >
             {/* <span className="px-2  text-2xl  border-black bg-neutral-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               {isActive}
             </span> */}
             <span
+              style={{ height: "40px" }}
               onClick={() => setIsActive(day - 1)}
-              className={`text-2xl px-2 text-white ${isActive === day - 1 && "text-4xl font-extrabold"} `}
+              className={`transition-all duration-300 ease-in-out text-2xl px-4  text-white ${isActive === day - 1 && "text-4xl font-extrabold"} `}
             >
               {day - 1}
             </span>
             <span
               onClick={() => setIsActive(day)}
-              className={`text-2xl px-2 text-white ${isActive === day && "text-4xl font-extrabold"} `}
+              className={`transition-all duration-300 ease-in-out text-2xl px-4 text-white ${isActive === day && "text-4xl font-extrabold"} `}
             >
               {day}
             </span>
             <span
               onClick={() => setIsActive(day + 1)}
-              className={`text-2xl px-2 text-white ${isActive === day + 1 && "text-4xl font-extrabold"} `}
+              className={`transition-all duration-300 ease-in-out text-2xl px-4 text-white ${isActive === day + 1 && "text-4xl font-extrabold"} `}
             >
               {day + 1}
             </span>
@@ -128,10 +142,10 @@ const Tasks = ({ tasks }) => {
 
         <section
           style={{ borderRadius: "50px", maxWidth: "500px" }}
-          className="z-20 sm:px-8 relative min-h-80 bg-orange-500 text-white mx-auto py-5 px-2 mt-10 "
+          className="z-20  sm:px-8  relative  bg-orange-500 text-white mx-auto py-5 px-2 mt-10 "
         >
           <span
-            className={`h-20 w-20   bg-orange-500 rotate-45 rounded-lg block absolute mt-5 -top-12  -translate-x-1/2  ${isActive === day - 1 && "left-1/3 sm:ml-5"} ${isActive === day && "left-1/2"} ${isActive === day + 1 && "left-2/3 sm:-ml-5"}`}
+            className={`h-20 w-20 transition-all duration-100 ease-in-out  bg-orange-500 rotate-45 rounded-lg block absolute mt-5 -top-12  -translate-x-1/2  ${isActive === day - 1 && "left-1/3 sm:ml-5"} ${isActive === day && "left-1/2"} ${isActive === day + 1 && "left-2/3 sm:-ml-5"}`}
           ></span>
           {filteredTask.map((task) => {
             const cDate = new Date().toLocaleDateString().split("/");
@@ -157,7 +171,7 @@ const Tasks = ({ tasks }) => {
 
             return (
               <div
-                className="relative  mt-2 mx-auto py-2 bg-orange-600  rounded-full  justify-between items-center flex px-4 gap-8  "
+                className="relative  box  mt-2 mx-auto py-2 bg-orange-600  rounded-full  justify-between items-center flex px-4 gap-8  "
                 key={task.id}
               >
                 <form
