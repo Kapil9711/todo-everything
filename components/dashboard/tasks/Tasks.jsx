@@ -212,7 +212,9 @@ const Tasks = ({ tasks }) => {
                         className=" inline-block"
                       />
                     </button>
-                    <h1 className=" text-lg capitalize tracking-wide font-bold">
+                    <h1
+                      className={`${task.completed && "line-through text-gray-300"} text-lg capitalize tracking-wide font-bold`}
+                    >
                       {task.content}
                     </h1>
                   </div>

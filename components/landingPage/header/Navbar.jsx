@@ -29,12 +29,14 @@ const Navbar = () => {
         </div>
         <div className="">
           <Link
+            style={{ textDecoration: "none" }}
             className="hidden sm:inline-block link text-orange-600 hover:text-orange-400  "
             href={"/"}
           >
             Home
           </Link>
           <Link
+            style={{ textDecoration: "none" }}
             scroll={true}
             className="hidden sm:inline-block  link text-orange-600 hover:text-orange-400   ml-10"
             href={"#about"}
@@ -42,13 +44,15 @@ const Navbar = () => {
             About
           </Link>
           <Link
+            style={{ textDecoration: "none" }}
             scroll={true}
-            className="hidden sm:inline-block  link text-orange-600 hover:text-orange-400   ml-10"
+            className="hidden sm:inline-block   link text-orange-600 hover:text-orange-400   ml-10"
             href={"#details"}
           >
             Features
           </Link>
           <Link
+            style={{ textDecoration: "none" }}
             className="text-xl ml-10 link text-orange-600 hover:text-orange-400   "
             href={"/tasks"}
           >
