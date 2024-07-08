@@ -161,7 +161,7 @@ const Tasks = ({ tasks }) => {
           ></span>
           {filteredTask.length === 0 && (
             <div className="relative  box  mt-2 mx-auto py-2 bg-orange-600  rounded-full  justify-between items-center flex px-4 gap-8  ">
-              <p>No Task To Show</p>
+              <p className="p-2 text-xl">Nothing To Show</p>
             </div>
           )}
           {filteredTask.map((task) => {
