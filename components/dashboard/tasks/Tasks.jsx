@@ -107,7 +107,7 @@ const Tasks = ({ tasks }) => {
 
       <section
         style={{ borderRadius: "50px" }}
-        className=" px-2 py-5   show-task min-h-screen mt-5 bg-secondary"
+        className=" px-2 py-8 sm:py-5   show-task min-h-screen mt-5 bg-secondary"
       >
         {/* <input type="date" /> */}
         <div className="relative">
