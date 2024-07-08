@@ -101,7 +101,7 @@ const CreateTask = ({ clerkId }) => {
               <textarea
                 name="description"
                 id="description"
-                className="mt-2 sm:mt-0 w-full max-w-96 h-28 p-4 text-xl leading-8"
+                className="mt-2 border border-white sm:mt-0 w-full max-w-96 h-28 p-4 text-xl leading-8"
               ></textarea>
             </div>
 

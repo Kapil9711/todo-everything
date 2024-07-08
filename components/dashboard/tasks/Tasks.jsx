@@ -10,7 +10,7 @@ import Link from "next/link";
 const DeleteBtn = () => {
   const { pending } = useFormStatus();
   return (
-    <button disabled={pending} className=" ml-5 btn btn-accent">
+    <button disabled={pending} className=" ml-5 p-2 bg-violet-600 rounded-lg">
       {pending ? "please-wait" : "delete"}
     </button>
   );
@@ -161,7 +161,7 @@ const Tasks = ({ tasks }) => {
           ></span>
           {filteredTask.length === 0 && (
             <div className="relative  box  mt-2 mx-auto py-2 bg-orange-600  rounded-full  justify-between items-center flex px-4 gap-8  ">
-              <p className="p-2 text-xl">Nothing To Show</p>
+              <p className="p-2 text-2xl text-center">Nothing To Show</p>
             </div>
           )}
           {filteredTask.map((task) => {
@@ -231,7 +231,7 @@ const Tasks = ({ tasks }) => {
                 </h2>
               </div> */}
 
-                {/* <form action={getFormState}>
+                <form action={getFormState}>
                   <input
                     type="text"
                     name="taskid"
@@ -239,7 +239,7 @@ const Tasks = ({ tasks }) => {
                     className="hidden"
                   />
                   <DeleteBtn />
-                </form> */}
+                </form>
               </div>
             );
           })}
