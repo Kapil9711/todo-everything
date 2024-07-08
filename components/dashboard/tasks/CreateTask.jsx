@@ -2,11 +2,20 @@
 import { createNewTask } from "@/utils/actions";
 import React from "react";
 import { useFormStatus, useFormState } from "react-dom";
+import { TextField } from "@mui/material";
+import Link from "next/link";
+
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const SubmitBtn = () => {
   const { pending } = useFormStatus();
   return (
-    <button disabled={pending} className="btn btn-accent join-item">
+    <button
+      disabled={pending}
+      className="bg-orange-500 hover:bg-orange-600  text-white px-16 tracking-wider mt-8 block mx-auto p-2 text-2xl"
+    >
       {pending ? "please-wait" : "Add"}
     </button>
   );
@@ -15,50 +24,103 @@ const SubmitBtn = () => {
 const CreateTask = ({ clerkId }) => {
   const [state, getState] = useFormState(createNewTask, null);
   return (
-    <div className=" flex justify-center items-center min-h-screen">
-      <form action={getState}>
-        {state && state.msg}
-        <input
-          name="clerkId"
-          className="hidden"
-          type="text"
-          defaultValue={clerkId}
-        />
-        <div className="join">
-          <label className="join-item input input-bordered flex items-center gap-2">
-            Task
-            <input
-              name="task"
-              required
-              type="text"
-              className="grow"
-              placeholder="drink water"
-            />
-          </label>
-
-          {/* *****************88 */}
-
+    <>
+      <div className="sm:px-12 px-2 sm:pt-28 pt-20  bg-secondary tracking-wide  min-h-screen">
+        <Link
+          className=" top-32  rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 pr-4 text-sm font-bold mb-10 bg-orange-500 hover:bg-orange-600"
+          href={"/tasks"}
+        >
+          Back
+        </Link>
+        <form
+          className="mt-10 p-5 border max-w-96 mx-auto border-white"
+          action={getState}
+        >
+          {state && state.msg}
           <input
-            name="time"
-            type="time"
-            className=" join-item border border-base-900"
+            name="clerkId"
+            className="hidden"
+            type="text"
+            defaultValue={clerkId}
           />
-          <input name="date" className="join-item" type="date" />
-          <SubmitBtn />
-          {/* <div className="relative join">
+          {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+
+          <div>
+            <div className="flex flex-col gap-2">
+              <label className="text-white sm:text-4xl text-xl" htmlFor="task">
+                Task
+              </label>
+              <label className="sm:text-2xl text-xl input input-bordered flex items-center gap-2">
+                <input
+                  name="task"
+                  id="task"
+                  required
+                  type="text"
+                  className="grow"
+                  placeholder="drink water"
+                />
+              </label>
+            </div>
+
+            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker name="date" className="bg-white" />
+          </LocalizationProvider> */}
+
+            {/* *****************88 */}
+            <div className="flex flex-col gap-2 mt-4">
+              <label className="text-white sm:text-4xl text-xl" htmlFor="time">
+                Time
+              </label>
+              <input
+                id="time"
+                name="time"
+                type="time"
+                className="w-full py-2 px-4 rounded-lg text-xl  border border-base-900"
+              />
+            </div>
+            <div className="flex flex-col gap-2 mt-4">
+              <label className="text-white sm:text-4xl text-xl" htmlFor="date">
+                Date
+              </label>
+
+              <input
+                id="date"
+                name="date"
+                type="date"
+                className=" py-2 px-4 text-xl w-full  border border-base-900"
+              />
+            </div>
+
+            <div className="mt-4 block sm:hidden">
+              <label
+                htmlFor="description"
+                className="sm:text-4xl text-xl  sm:mb-4 text-white"
+              >
+                Description
+              </label>
+              <textarea
+                name="description"
+                id="description"
+                className="mt-2 sm:mt-0 w-full max-w-96 h-28 p-4 text-xl leading-8"
+              ></textarea>
+            </div>
+
+            <SubmitBtn />
+            {/* <div className="relative join">
             <label className="input join-item input-bordered flex items-center gap-2">
               Time
               <input type="text" className="grow" placeholder="12-h-format" />
             </label> */}
 
-          {/* <select className="join-item w-20 select select-bordered max-w-xs">
+            {/* <select className="join-item w-20 select select-bordered max-w-xs">
               <option>PM</option>
               <option selected>AM</option>
             </select> */}
-          {/* </div> */}
-        </div>
-      </form>
-    </div>
+            {/* </div> */}
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 

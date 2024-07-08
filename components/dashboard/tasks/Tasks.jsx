@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import { useFormStatus, useFormState } from "react-dom";
 import gsap, { Expo } from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 const DeleteBtn = () => {
   const { pending } = useFormStatus();
@@ -65,28 +66,39 @@ const Tasks = ({ tasks }) => {
   return (
     <div
       style={{ scrollbarWidth: "none" }}
-      className=" pt-20 bg-base-200   inline-block  max-h-screen overflow-scroll "
+      className=" pt-4 bg-secondary   inline-block  max-h-screen overflow-scroll "
     >
+      <Link
+        className=" top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold mb-10 bg-orange-500 hover:bg-orange-600"
+        href={"/createTask"}
+      >
+        + Add
+      </Link>
+      <div className="h-2 w-2 pt-20"></div>
       <section className=" pt-4 sm:px-10 dashboard ">
         {/* <h2 className=" text-2xl">Dashboard</h2>
         <p className="text-base-400 py-1">See your Performance</p> */}
 
         <section className="px-4  cards grid grid-cols-3 gap-8  sm:gap-16">
-          <div className="p-2 pt-5 tracking-wide rounded-full text-center text-xs sm:text-2xl font-extrabold text-white bg-pink-400  h-20 sm:h-28">
+          <div className="p-2 tracking-wide pt-5 sm:pt-2 tracking-wide rounded-full text-center text-xs sm:text-xl font-extrabold text-white bg-pink-400  h-20 sm:h-20">
             All Tasks
-            <span className="sm:mt-2 text-xl  sm:text-3xl  block text-bold text-center">
+            <span className=" text-xl  sm:text-2xl  block text-bold text-center">
               {tasks.length}
             </span>
           </div>
-          <div className="p-2 pt-5 tracking-wide text-white font-extrabold bg-violet-500 h-20 sm:h-28 rounded-full ">
-            <p className="sm:text-2xl text-xs text-center ">Completed </p>
-            <p className="text-xl  sm:text-3xl  text-center sm:pt-2">
+          <div className="p-2 pt-5 sm:pt-2 tracking-wide text-white font-extrabold bg-violet-500 h-20 sm:h-20 rounded-full ">
+            <p className="sm:text-xl tracking-wide text-xs text-center ">
+              Completed{" "}
+            </p>
+            <p className="text-xl  sm:text-2xl  text-center ">
               {noOfCompleted}
             </p>
           </div>
-          <div className="p-2 pt-5 tracking-wide text-white font-extrabold bg-violet-700 h-20 sm:h-28 rounded-full ">
-            <p className="sm:text-2xl text-xs text-center ">Remaining</p>
-            <p className="text-xl  sm:text-3xl  text-center sm:pt-2">
+          <div className="p-2 pt-5 sm:pt-2 tracking-wide text-white font-extrabold bg-fuchsia-500 h-20 sm:h-20 rounded-full ">
+            <p className="sm:text-xl tracking-wide text-xs text-center ">
+              Remaining
+            </p>
+            <p className="text-xl  sm:text-2xl  text-center ">
               {noOfunCompleted}
             </p>
           </div>
@@ -95,13 +107,13 @@ const Tasks = ({ tasks }) => {
 
       <section
         style={{ borderRadius: "50px" }}
-        className=" px-2 py-5   show-task min-h-screen mt-5 bg-base-200"
+        className=" px-2 py-5   show-task min-h-screen mt-5 bg-secondary"
       >
         {/* <input type="date" /> */}
         <div className="relative">
           <p
             style={{ scrollbarWidth: "none" }}
-            className="p-4 cursor-pointer  rounded-full flex mx-auto bg-orange-600  gap-5 justify-center  max-w-60 overflow-x-scroll"
+            className="p-2 cursor-pointer relative z-20  rounded-full flex mx-auto bg-orange-600  gap-5 justify-center  max-w-60 overflow-x-scroll"
           >
             {/* <span className="px-2  text-2xl  border-black bg-neutral-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               {isActive}
@@ -109,7 +121,7 @@ const Tasks = ({ tasks }) => {
             <span
               style={{ height: "40px" }}
               onClick={() => setIsActive(day - 1)}
-              className={`transition-all duration-300 ease-in-out text-2xl px-4  text-white ${isActive === day - 1 && "text-4xl font-extrabold"} `}
+              className={`transition-all duration-300  ease-in-out text-2xl px-4  text-white ${isActive === day - 1 && "text-4xl font-extrabold"} `}
             >
               {day - 1}
             </span>

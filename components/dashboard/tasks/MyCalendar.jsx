@@ -14,12 +14,9 @@ const MyCalendar = () => {
   //   const [date, setDate] = useState(new Date());
   //   console.log(date);
   const [value, setValue] = React.useState(dayjs("2022-04-17"));
-  console.log(value);
 
   return (
     <div>
-      {/* <Calendar className="text-black" onChange={setDate} value={date} />
-      <p className="text-center mt-4">Selected date: {date.toDateString()}</p> */}
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar
           value={value}
