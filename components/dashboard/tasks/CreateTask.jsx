@@ -71,7 +71,7 @@ const CreateTask = ({ clerkId }) => {
           </LocalizationProvider> */}
 
             {/* *****************88 */}
-            <div className="flex flex-col gap-2 mt-4 sm:mt-8">
+            <div className="flex flex-col gap-2 mt-5 sm:mt-8">
               <label
                 className="text-white sm:text-2xl font-bold text-xl"
                 htmlFor="time"
@@ -85,7 +85,7 @@ const CreateTask = ({ clerkId }) => {
                 className="w-full py-2 px-4 rounded-lg text-xl  border border-base-900"
               />
             </div>
-            <div className="flex flex-col gap-2 mt-4 sm:mt-8">
+            <div className="flex flex-col gap-2 mt-5 sm:mt-8">
               <label
                 className="text-white sm:text-2xl font-bold text-xl"
                 htmlFor="date"
@@ -101,7 +101,7 @@ const CreateTask = ({ clerkId }) => {
               />
             </div>
 
-            <div className="mt-4 block sm:hidden">
+            <div className="mt-5 block sm:hidden">
               <label
                 htmlFor="description"
                 className="sm:text-4xl text-xl  sm:mb-4 text-white"
