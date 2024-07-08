@@ -69,7 +69,7 @@ const Tasks = ({ tasks }) => {
       className=" pt-4 bg-secondary   inline-block  max-h-screen overflow-scroll "
     >
       <Link
-        className=" top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold   bg-orange-500 hover:bg-orange-600"
+        className=" z-30 top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold   bg-orange-500 hover:bg-orange-600"
         href={"/createTask"}
       >
         + Add
@@ -212,7 +212,7 @@ const Tasks = ({ tasks }) => {
                         className=" inline-block"
                       />
                     </button>
-                    <h1 className=" text-2xl capitalize tracking-wide font-bold">
+                    <h1 className=" text-lg capitalize tracking-wide font-bold">
                       {task.content}
                     </h1>
                   </div>
