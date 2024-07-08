@@ -14,9 +14,9 @@ const SubmitBtn = () => {
   return (
     <button
       disabled={pending}
-      className="bg-orange-500 hover:bg-orange-600  text-white px-16 tracking-wider mt-8 block mx-auto p-2 text-2xl"
+      className="bg-orange-500 hover:bg-orange-600  text-white px-16 tracking-wider mt-5 block mx-auto p-2 text-2xl"
     >
-      {pending ? "please-wait" : "Add"}
+      {pending ? "wait" : "Add"}
     </button>
   );
 };
@@ -25,17 +25,17 @@ const CreateTask = ({ clerkId }) => {
   const [state, getState] = useFormState(createNewTask, null);
   return (
     <>
-      <div className="sm:px-12 px-2 sm:pt-28 pt-20  bg-secondary tracking-wide  min-h-screen">
-        <Link
-          className=" top-32  rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 pr-4 text-sm font-bold mb-10 bg-orange-500 hover:bg-orange-600"
-          href={"/tasks"}
-        >
-          Back
-        </Link>
+      <div className="sm:px-12 px-2 sm:pt-28 pt-20 relative  bg-secondary tracking-wide  min-h-screen">
         <form
-          className="mt-10 p-5 border max-w-96 mx-auto border-white"
+          className="mt-10 p-5 relative border max-w-96 mx-auto border-white"
           action={getState}
         >
+          <Link
+            className=" top-2  rounded-l-xl right-0 absolute inline-block sm:hidden  text-white py-2 px-2 pr-4 text-sm font-bold mb-10 bg-orange-500 hover:bg-orange-600"
+            href={"/tasks"}
+          >
+            Back
+          </Link>
           {state && state.msg}
           <input
             name="clerkId"
@@ -69,7 +69,7 @@ const CreateTask = ({ clerkId }) => {
             {/* *****************88 */}
             <div className="flex flex-col gap-2 mt-4">
               <label className="text-white sm:text-4xl text-xl" htmlFor="time">
-                Time
+                Target Time
               </label>
               <input
                 id="time"
@@ -80,7 +80,7 @@ const CreateTask = ({ clerkId }) => {
             </div>
             <div className="flex flex-col gap-2 mt-4">
               <label className="text-white sm:text-4xl text-xl" htmlFor="date">
-                Date
+                Target Date
               </label>
 
               <input

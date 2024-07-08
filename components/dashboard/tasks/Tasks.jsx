@@ -69,7 +69,7 @@ const Tasks = ({ tasks }) => {
       className=" pt-4 bg-secondary   inline-block  max-h-screen overflow-scroll "
     >
       <Link
-        className=" top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold mb-10 bg-orange-500 hover:bg-orange-600"
+        className=" top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold   bg-orange-500 hover:bg-orange-600"
         href={"/createTask"}
       >
         + Add
@@ -80,7 +80,7 @@ const Tasks = ({ tasks }) => {
         <p className="text-base-400 py-1">See your Performance</p> */}
 
         <section className="px-4  cards grid grid-cols-3 gap-8  sm:gap-16">
-          <div className="p-2 tracking-wide pt-5 sm:pt-2 tracking-wide rounded-full text-center text-xs sm:text-xl font-extrabold text-white bg-pink-400  h-20 sm:h-20">
+          <div className="p-2 tracking-wide pt-5 sm:pt-2  rounded-full text-center text-xs sm:text-xl font-extrabold text-white bg-pink-400  h-20 sm:h-20">
             All Tasks
             <span className=" text-xl  sm:text-2xl  block text-bold text-center">
               {tasks.length}
@@ -159,6 +159,11 @@ const Tasks = ({ tasks }) => {
           <span
             className={`h-20 w-20 transition-all duration-100 ease-in-out  bg-orange-500 rotate-45 rounded-lg block absolute mt-5 -top-12  -translate-x-1/2  ${isActive === day - 1 && "left-1/3 sm:ml-5"} ${isActive === day && "left-1/2"} ${isActive === day + 1 && "left-2/3 sm:-ml-5"}`}
           ></span>
+          {filteredTask.length === 0 && (
+            <div className="relative  box  mt-2 mx-auto py-2 bg-orange-600  rounded-full  justify-between items-center flex px-4 gap-8  ">
+              <p>No Task To Show</p>
+            </div>
+          )}
           {filteredTask.map((task) => {
             const cDate = new Date().toLocaleDateString().split("/");
             const tDate = task.targetDate.split("/");
