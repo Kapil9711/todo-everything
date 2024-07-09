@@ -61,7 +61,7 @@ const Tasks = ({ tasks }) => {
   const handleScroll = (e) => {
     const { top } = taskRef.current.getBoundingClientRect();
 
-    if (top < 80) {
+    if (top < 200) {
       e.target.classList.remove("px-2");
       taskRef.current.classList.add("pt-20");
     } else {
