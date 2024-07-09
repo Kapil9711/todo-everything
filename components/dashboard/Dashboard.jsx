@@ -17,7 +17,7 @@ const Dashboard = () => {
       <div className="drawer tracking-wide drawer-open hidden sm:block  ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-        <div className="drawer-side      bg-base-100 p-0">
+        <div className="drawer-side transition-all duration-200 ease-in-out   bg-base-100 p-0">
           {/* <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const Description = ({ desValue, setDesValue }) => {
   return (
-    <div className="bg-primary hidden sm:block relative   p-2 min-h-screen sm:-ml-20 sm:pt-36 sm:mt-2">
+    <div className="bg-primary transition-all duration-200 ease-in-out hidden sm:block relative   p-2 min-h-screen sm:-ml-20 sm:pt-36 sm:mt-2">
       {/* <form className="border border-white max-w-96 p-4" action="">
         <h1 className="text-4xl mb-4 text-white">Description</h1>
         <textarea
