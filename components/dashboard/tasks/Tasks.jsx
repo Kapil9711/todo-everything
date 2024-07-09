@@ -16,6 +16,8 @@ const DeleteBtn = () => {
   );
 };
 
+let lastPosition = 99999999;
+
 const Tasks = ({ tasks }) => {
   let noOfCompleted = 0;
   let noOfunCompleted = 0;
@@ -28,11 +30,15 @@ const Tasks = ({ tasks }) => {
   let month = new Date().getMonth() + 1;
   let day = new Date().getDate();
   let allDays = [];
-  console.log(day);
+  // console.log(day);
 
   const [state, getFormState] = useFormState(deleteTask, null);
   const [isActive, setIsActive] = useState(day);
+  const [position, setPosition] = useState(211);
   const btnRef = useRef(null);
+  const taskRef = useRef(null);
+  const mainRef = useRef(null);
+
   const activeRef = useRef(isActive);
 
   let monthTasks = tasks.filter((task) => {
@@ -52,6 +58,54 @@ const Tasks = ({ tasks }) => {
     (task) => parseInt(task.createdDate.split("/")[0]) === isActive
   );
 
+  const handleScroll = (e) => {
+    const { top } = taskRef.current.getBoundingClientRect();
+
+    if (top < 80) {
+      e.target.classList.remove("px-2");
+      taskRef.current.classList.add("pt-20");
+    } else {
+      e.target.classList.add("px-2");
+      taskRef.current.classList.remove("pt-20");
+    }
+
+    // else if (top < 200) {
+    // e.target.classList.remove("px-2");
+    // taskRef.current.classList.remove(`static`);
+    // taskRef.current.classList.add(`absolute`);
+    // taskRef.current.classList.add(`w-full`);
+
+    //   if (top % 10 === 0) taskRef.current.style.top = top + "px";
+    // } else {
+    //   e.target.classList.add("px-2");
+    //   taskRef.current.classList.remove("pt-20");
+    // }
+  };
+
+  useEffect(() => {
+    // const { top } = taskRef.current.getBoundingClientRect();
+    // if (lastPosition < position) {
+    //   if (lastPosition + 10 < position) {
+    //     lastPosition = position;
+    //     console.log("hi");
+    //     taskRef.current.classList.remove(`absolute`);
+    //     taskRef.current.classList.remove(`static`);
+    //     taskRef.current.classList.add(`static`);
+    //     // if (top > 200) e.target.classList.add("px-2");
+    //     taskRef.current.classList.remove(`w-full`);
+    //     mainRef.current.classList.remove("px-2");
+    //     mainRef.current.classList.add("px-2");
+    //   }
+    // } else {
+    //   mainRef.current.classList.remove("px-2");
+    //   taskRef.current.classList.remove(`static`);
+    //   taskRef.current.classList.remove(`absolute`);
+    //   taskRef.current.classList.add(`absolute`);
+    //   taskRef.current.classList.add(`w-full`);
+    //   taskRef.current.style.top = position + "px";
+    // }
+  }, [position]);
+
   useGSAP(() => {
     gsap.from(".box", {
       delay: 0.1,
@@ -65,8 +119,10 @@ const Tasks = ({ tasks }) => {
 
   return (
     <div
+      ref={mainRef}
       style={{ scrollbarWidth: "none" }}
-      className="px-2 sm:px-0 sm:pl-4 pt-4 bg-secondary   inline-block  max-h-screen overflow-scroll "
+      onScroll={handleScroll}
+      className="px-2 sm:px-0 sm:pl-4 pt-4 bg-secondary relative   inline-block  max-h-screen overflow-scroll "
     >
       <Link
         className=" z-30 top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold   bg-orange-500 hover:bg-orange-600"
@@ -106,8 +162,9 @@ const Tasks = ({ tasks }) => {
       </section>
 
       <section
+        ref={taskRef}
         style={{ borderRadius: "50px" }}
-        className=" px-2 py-8 sm:py-5   show-task min-h-screen mt-5 bg-base-200 "
+        className=" px-2 transition-all duration-300 ease-in-out py-8 sm:py-5   show-task min-h-screen mt-5 bg-base-200 "
       >
         {/* <input type="date" /> */}
         <div className="relative">
