@@ -14,7 +14,9 @@ const createNewTask = async (prevState, formData) => {
     const content = formData.get("task");
     const targetTime = formData.get("time");
     const targetDate = formData.get("date").split("-").reverse().join("/");
+    let description = formData.get("description");
     const clerkId = formData.get("clerkId");
+    if (description === "") description = "add something";
 
     task.parse({ content, targetDate, targetTime });
     await prisma.task.create({
@@ -23,6 +25,7 @@ const createNewTask = async (prevState, formData) => {
         targetTime,
         targetDate,
         clerkId,
+        description,
         createdTime: new Date().toLocaleTimeString("en-IN", {
           hour: "2-digit",
           minute: "2-digit",
@@ -40,7 +43,7 @@ const createNewTask = async (prevState, formData) => {
     return { msg: "created" };
   } catch (error) {
     console.log(error);
-    return { msg: "some-error" };
+    return { msg: "error" };
   }
 };
 

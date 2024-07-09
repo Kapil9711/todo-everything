@@ -2,12 +2,13 @@
 import { createNewTask } from "@/utils/actions";
 import React from "react";
 import { useFormStatus, useFormState } from "react-dom";
-import { TextField } from "@mui/material";
+// import { TextField } from "@mui/material";
 import Link from "next/link";
+import { useState } from "react";
 
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const SubmitBtn = () => {
   const { pending } = useFormStatus();
@@ -23,12 +24,13 @@ const SubmitBtn = () => {
 
 const CreateTask = ({ clerkId }) => {
   const [state, getState] = useFormState(createNewTask, null);
+
   return (
     <>
       <div className="sm:px-12 px-2 sm:pt-28 pt-20 relative  bg-secondary tracking-wide  min-h-screen">
         <form
           style={{ maxWidth: "410px" }}
-          className="mt-10 p-5 relative border  mx-auto border-white"
+          className="mt-10 p-5 relative sm:static  border  mx-auto border-white"
           action={getState}
         >
           <Link
@@ -37,7 +39,14 @@ const CreateTask = ({ clerkId }) => {
           >
             Back
           </Link>
-          {state && state.msg}
+          {state && (
+            <p
+              className={`${state.msg === "created" ? "text-green-500 font-extrabold" : "text-red-500 font-extrabold"} text-xl capitalize p-2 text-center `}
+            >
+              {state.msg}
+            </p>
+          )}
+
           <input
             name="clerkId"
             className="hidden"
@@ -101,7 +110,7 @@ const CreateTask = ({ clerkId }) => {
               />
             </div>
 
-            <div className="mt-5 block sm:hidden">
+            <div className=" mt-5 sm:mt-2 max-w-96 sm:border sm:p-4 block sm:absolute sm:top-36  z-10 sm:-right-80 ">
               <label
                 htmlFor="description"
                 className="sm:text-4xl text-xl  sm:mb-4 text-white"
@@ -111,10 +120,15 @@ const CreateTask = ({ clerkId }) => {
               <textarea
                 name="description"
                 id="description"
-                className="mt-2 border border-white sm:mt-0 w-full max-w-96 h-28 p-4 text-xl leading-8"
+                className="mt-2 sm:mt-5 border border-white  w-full max-w-96 h-28 sm:h-40 p-4 text-xl leading-8"
               ></textarea>
             </div>
-
+            {/* <button
+              disabled={pending}
+              className="bg-orange-500 hover:bg-orange-600  text-white px-16 tracking-wider mt-5 sm:mt-8 block mx-auto p-2 text-2xl"
+            >
+              {pending ? "wait" : "Add"}
+            </button> */}
             <SubmitBtn />
             {/* <div className="relative join">
             <label className="input join-item input-bordered flex items-center gap-2">
