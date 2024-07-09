@@ -27,7 +27,7 @@ const CreateTask = ({ clerkId }) => {
 
   return (
     <>
-      <div className="sm:px-12 px-2 sm:pt-28 pt-20 relative  bg-secondary tracking-wide  min-h-screen">
+      <div className="sm:px-12 px-2 sm:pt-28 pt-20 relative  bg-primary tracking-wide  min-h-screen">
         <form
           style={{ maxWidth: "410px" }}
           className="mt-10 p-5 relative sm:static  border  mx-auto border-white"

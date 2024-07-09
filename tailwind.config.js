@@ -35,6 +35,18 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["winter", "black"], // Add desired themes here
+    themes: [
+      {
+        mytheme: {
+          primary: "#7a00c2",
+          secondary: "#e1e6d9",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "#dbdbdb",
+        },
+      },
+
+      "black",
+    ], // Add desired themes here
   },
 };

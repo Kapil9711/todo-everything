@@ -9,7 +9,7 @@ const DashboardNav = () => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content absolute top-0  w-full z-50   flex flex-col">
           {/* Navbar */}
-          <div className="navbar bg-base-300 opacity-95  w-full">
+          <div className="navbar bg-base-100 opacity-95  w-full">
             {/* <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"

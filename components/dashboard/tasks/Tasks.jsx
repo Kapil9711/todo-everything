@@ -66,7 +66,7 @@ const Tasks = ({ tasks }) => {
   return (
     <div
       style={{ scrollbarWidth: "none" }}
-      className=" pt-4 bg-secondary   inline-block  max-h-screen overflow-scroll "
+      className="px-2 sm:pl-4 pt-4 bg-base-200   inline-block  max-h-screen overflow-scroll "
     >
       <Link
         className=" z-30 top-52 rounded-l-xl right-0 fixed inline-block sm:hidden  text-white py-2 px-2 text-sm font-bold   bg-orange-500 hover:bg-orange-600"
